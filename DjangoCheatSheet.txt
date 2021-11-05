@@ -1,0 +1,8 @@
+-- Create app
+python manage.py startapp appName
+
+-- Start dev server
+python manage.py runserver
+
+python manage.py makemigrations
+python manage.py migrate

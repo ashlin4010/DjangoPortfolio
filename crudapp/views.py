@@ -13,8 +13,13 @@ class IndexView(ListView):
 
 
 class ContactDetailView(DetailView):
-    model = Contact
-    template_name = 'contact-detail.html'
+    template_name = 'contact_detail.html'
+
+    def get(self, request, *args, **kwargs):
+        pk = self.kwargs['pk']
+        contact = get_object_or_404(Contact, pk=pk)
+        print(contact.email)
+        return render(request, self.template_name, {"contact": contact})
 
 
 def create(request):
