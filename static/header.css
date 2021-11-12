@@ -1,0 +1,17 @@
+.main-header {
+    padding: 0 10px;
+    background: red;
+    display: flex;
+    align-items: center;
+}
+
+.main-header > h2 {
+    padding: 0;
+    text-align: center;
+    margin: 10px;
+}
+
+.main-header > div {
+    margin-left: auto;
+}
+

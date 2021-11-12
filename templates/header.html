@@ -1,0 +1,21 @@
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'header.css' %}">
+<div class="main-header">
+    <h2>Some web site</h2>
+    {% if user.is_authenticated %}
+<!--        Hi {{ user.username }}!-->
+        <div>
+            <a class="btn btn-primary" href="{% url 'manage' %}">Manage</a>
+            <a class="btn btn-primary" href="{% url 'logout' %}">Log Out</a>
+        </div>
+    {% else %}
+        <div>
+            <a class="btn btn-primary" href="{% url 'login' %}">Log In</a>
+        </div>
+
+{% endif %}
+
+
+
+</div>

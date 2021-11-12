@@ -1,0 +1,21 @@
+<!-- referral/templates/navigation_panel.html -->
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'navigation_panel.css' %}">
+<div class="nav-box">
+    <ul>
+        <li><a href="{% url 'home' %}" >Home</a></li>
+        <li><hr/></li>
+        <li><a href="{% url 'people' %}" >People</a></li>
+        <li><a href="{% url 'referrer' %}" >Referrers</a></li>
+        <li><a>Referral</a></li>
+    </ul>
+
+    <hr>
+
+        <ul>
+        <li><a href="{% url 'add_person' %}">Add People</a></li>
+        <li><a>Add Referrer</a></li>
+        <li><a>Add Referral</a></li>
+    </ul>
+
+</div>

@@ -1,0 +1,26 @@
+.nav-box {
+    background: #a5a5a5;
+    width: 80%;
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: fit-content;
+}
+
+.nav-box > ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+
+.nav-box > ul > li {
+    margin: 10px 0;
+    font-size: 1.5em;
+
+}
+
+.nav-box > ul > li > a {
+    cursor: pointer;
+    user-select: none;
+}

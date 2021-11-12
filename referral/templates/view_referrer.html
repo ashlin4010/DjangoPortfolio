@@ -1,0 +1,103 @@
+<!--view_referrer.html-->
+{% extends 'referral_container.html' %}
+{% block view %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'view_people.css' %}">
+<div>
+<!--<h3 style="text-align:center;">Referrers</h3>-->
+
+<!--organisation-->
+<h3 style="text-align:center;">Organisations</h3>
+<table class="data-table">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th style="width: 0;">
+            <a href="{% url 'add_person' %}">
+                <button type="button" class="btn btn-success add-item">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    Add Organisation
+                </button>
+            </a>
+        </th>
+    </tr>
+    {% for referrer in list %}
+        {% if referrer.type == "ORGANISATION" %}
+            <tr>
+                <td>{{referrer.id}}</td>
+                <td>{{referrer.name}}</td>
+                <td class="button-row">
+                    <a>
+                        <button type="button" class="btn btn-info">
+                            <span class="glyphicon glyphicon-open"></span>
+                        </button>
+                    </a>
+
+                    <a>
+                        <button type="button" class="btn btn-info">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </button>
+                    </a>
+
+                    <a href="{% url 'delete_referrer' referrer.pk %}">
+                        <button type="button" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                    </a>
+                </td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+</table>
+<br>
+<br>
+
+
+<!-- INDIVIDUAL -->
+    <h3 style="text-align:center;">Individuals</h3>
+<table class="data-table">
+    <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th style="width: 0;">
+            <a href="{% url 'add_person' %}">
+                <button type="button" class="btn btn-success add-item">
+                    <span class="glyphicon glyphicon-plus"></span>
+                    Add Individual
+                </button>
+            </a>
+        </th>
+    </tr>
+    {% for referrer in list %}
+        {% if referrer.type == "INDIVIDUAL" %}
+            <tr>
+                <td>{{referrer.id}}</td>
+                <td>{{referrer.name }}</td>
+                <td>{{referrer.last_name}}</td>
+                <td class="button-row">
+                    <a>
+                        <button type="button" class="btn btn-info">
+                            <span class="glyphicon glyphicon-open"></span>
+                        </button>
+                    </a>
+
+                    <a>
+                        <button type="button" class="btn btn-info">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </button>
+                    </a>
+
+                    <a href="{% url 'delete_referrer' referrer.pk %}">
+                        <button type="button" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                    </a>
+                </td>
+            </tr>
+        {% endif %}
+    {% endfor %}
+</table>
+
+</div>
+{% endblock %}

@@ -26,10 +26,12 @@ urlpatterns = [
     path('', TemplateView.as_view(template_name='home.html'), name='home'),
 
 
-    path('manage/', views.IndexView.as_view(), name='manage'),
-    path('contacts/', views.IndexView.as_view(), name='index'),
-    path('contacts/<int:pk>/', views.ContactDetailView.as_view(), name='detail'),
-    path('contacts/edit/<int:pk>/', views.edit, name='edit'),
-    path('contacts/create/', views.create, name='create'),
-    path('contacts/delete/<int:pk>/', views.delete, name='delete'),
+    path('manage/', include('referral.urls')),
+
+    # path('manage/', views.IndexView.as_view(), name='manage'),
+    # path('contacts/', views.IndexView.as_view(), name='index'),
+    # path('contacts/<int:pk>/', views.ContactDetailView.as_view(), name='detail'),
+    # path('contacts/edit/<int:pk>/', views.edit, name='edit'),
+    # path('contacts/create/', views.create, name='create'),
+    # path('contacts/delete/<int:pk>/', views.delete, name='delete'),
 ]

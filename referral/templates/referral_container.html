@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<div style="
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
+    grid-template-rows: 8vh;
+">
+
+    <!--side nav pane-->
+    <div style="grid-row-start: 2; height: 0;">
+        {% include "navigation_panel.html" %}
+    </div>
+
+    <div style="
+    grid-row-start: 2;
+    grid-column-start: 2;
+    height: fit-content;
+">
+        {% block view %}
+            <!--main app content-->
+        {% endblock %}
+    </div>
+
+</div>
+
+{% endblock %}
