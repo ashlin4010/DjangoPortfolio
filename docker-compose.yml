@@ -6,16 +6,16 @@ services:
     volumes:
       - ./data/db:/var/lib/postgresql/data
     environment:
-      - MYSQL_ROOT_PASSWORD: PuPKcCKfxzw6bxUl
-      - MYSQL_DATABASE: django
-      - MYSQL_USER: django
-      - MYSQL_PASSWORD: 36HgLBcQwRdUuAgj
+      - MYSQL_ROOT_PASSWORD=PuPKcCKfxzw6bxUl
+      - MYSQL_DATABASE=django
+      - MYSQL_USER=django
+      - MYSQL_PASSWORD=36HgLBcQwRdUuAgj
   web:
     build: .
-    command: python manage.py runserver 0.0.0.0:8000
+    command: sh -c "./wait-for-it.sh db:3306 -- python manage.py runserver 0.0.0.0:8013"
     volumes:
       - .:/code
     ports:
-      - "8000:8000"
+      - "8013:8013"
     depends_on:
       - db

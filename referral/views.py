@@ -20,7 +20,6 @@ def person(request):
 def info_person(request, pk):
     row = get_object_or_404(Person, pk=pk)
     referrals = Referral.objects.select_related('person', 'referrer').filter(person=pk)
-    print(referrals)
     return render(request, 'info_people.html', {'person': row, 'list': referrals})
 
 
@@ -101,9 +100,8 @@ def edit_referrer(request, pk, enable=""):
 # Referral ########################################################################################
 @login_required
 def referral(request):
-    pubs = Referral.objects.select_related('person', 'referrer')
-    print(pubs)
-    return render(request, 'view_referral.html', {"list": pubs})
+    referrals = Referral.objects.select_related('person', 'referrer')
+    return render(request, 'view_referral.html', {"list": referrals})
 
 
 @login_required
