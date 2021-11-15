@@ -1,5 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
+
+<script>
+
+function back(e) {
+    e.preventDefault();
+    console.log("fdfdfsdf");
+}
+
+</script>
+
 <div class="container">
     <div class="row"></div>
     <br />
@@ -13,9 +23,17 @@
                         Are you sure you want to delete {{ object }}?
                     </div>
                 </div>
+
+
                 <button type="submit" class="btn btn-danger">
                     <span class="glyphicon glyphicon-trash"></span>
+                    Delete
                 </button>
+
+                <button type="button" class="btn btn-primary" onclick="history.go(-1)">
+                    Cancel
+                </button>
+
             </form>
         </div>
     </div>

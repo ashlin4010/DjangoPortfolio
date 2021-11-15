@@ -1,5 +1,5 @@
 .nav-box {
-    background: #a5a5a5;
+    background: #dfdfdf;
     width: 80%;
     border-radius: 5px;
     padding: 10px;
@@ -16,7 +16,7 @@
 
 .nav-box > ul > li {
     margin: 10px 0;
-    font-size: 1.5em;
+    font-size: 1.3em;
 
 }
 

@@ -1,11 +1,28 @@
 <!-- templates/home.html-->
 {% extends 'base.html' %}
-
 {% block title %}Home{% endblock %}
-
 {% block content %}
+{% load static %}
 
-<h1> this is the home page</h1>
+<div class="home-page">
 
+    <link rel="stylesheet" type="text/css" href="{% static 'homepage.css' %}">
+    <h2 class="center">NZ Health</h2>
+
+    <div class="home-content">
+        <img src="{% static 'doctor.jpg' %}">
+        <h4 class="center">About us</h4>
+        <p>NZ Health is a world renowned healthcare case management system. Using advanced technology that works* we provide a first-class** service.
+            Currently our system is in uses by a number of hospitals and health organisations throughout New Zealand.
+        </p>
+        <p>Integer et dui aliquet, ullamcorper lectus at, maximus sem.
+            Donec mi mi, scelerisque eget dui non, volutpat pharetra magna.
+            Duis viverra odio at diam tristique, ac pellentesque ex pellentesque.
+            Maecenas et arcu ac odio tempus commodo sed a ante.
+            Ut sed elit at ipsum fermentum bibendum non id risus
+        </p>
+        <p><small><small>*</small>: works in theory not in actuality, <small>**</small>:measured independently by us</small></p>
+    </div>
+</div>
 
 {% endblock %}

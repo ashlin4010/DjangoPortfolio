@@ -9,6 +9,9 @@ class Person(models.Model):
     notes = models.TextField(max_length=4000, blank=True, null=True)
     createdAt = models.DateTimeField("Created At", auto_now_add=True)
 
+    def __str__(self):
+        return f'{self.first_name} {self.last_name}'
+
 
 class Referrer(models.Model):
     ReferrerType = models.TextChoices('ReferrerType', 'ORGANISATION INDIVIDUAL')
@@ -17,6 +20,9 @@ class Referrer(models.Model):
     last_name = models.CharField(max_length=30, blank=True, null=True)
     createdAt = models.DateTimeField("Created At", auto_now_add=True)
 
+    def __str__(self):
+        return f'{self.name} ({self.type.lower()})'
+
 
 class Referral(models.Model):
     date = models.DateTimeField()
@@ -24,3 +30,7 @@ class Referral(models.Model):
     createdAt = models.DateTimeField("Created At", auto_now_add=True)
     person = models.ForeignKey(Person, on_delete=models.CASCADE)
     referrer = models.ForeignKey(Referrer, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'(Referral - {self.date.date()} - {self.person.first_name} {self.person.last_name} - {self.referrer.name})'
+

@@ -2,3 +2,31 @@ body {
     margin: 0;
     padding: 0;
 }
+
+.main-header {
+    padding: 0 10px;
+    background: #00adff;
+    display: flex;
+    align-items: center;
+}
+
+.main-header > h2 {
+    padding: 0;
+    text-align: center;
+    margin: 10px;
+}
+
+.main-header > div {
+    margin-left: auto;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #00adff;
+  color: white;
+  text-align: center;
+}
+

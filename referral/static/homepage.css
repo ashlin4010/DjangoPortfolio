@@ -1,0 +1,23 @@
+.home-content {
+    width: 60vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.center {
+text-align: center;
+}
+
+.home-page h2 {
+    margin: 40px
+}
+
+.home-page img {
+    float: right;
+    margin: 10px;
+    height: 60%;
+}
+
+.home-page small small {
+    font-weight: 900;
+}

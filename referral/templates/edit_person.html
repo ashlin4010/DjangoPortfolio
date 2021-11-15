@@ -1,0 +1,44 @@
+{% extends 'referral_container.html' %}
+{% block view %}
+{% load static %}
+
+{% load widget_tweaks %}
+
+<div class="container-fluid">
+    {% if enable %}
+        <h3 style="text-align: center">Edit Person</h3>
+    {% else %}
+        <h3 style="text-align: center">View Person</h3>
+    {% endif %}
+    <div class="row">
+        <div class="col-md-1 col-xs-1 col-sm-1"></div>
+        <div class="col-md-10 col-xs-10 col-sm-10">
+            <form method="post" novalidate>
+                {% csrf_token %}
+                {% for hidden_field in form.hidden_fields %}
+                    {{ hidden_field }}
+                {% endfor %}
+                {% for field in form.visible_fields %}
+                <div class="form-group">
+                    {{ field.label_tag }}
+                    {% render_field field class="form-control" %}
+                    {% if field.help_text %}
+                    <small class="form-text text-muted">{{ field.help_text }}</small>
+                    {% endif %}
+                </div>
+                {% endfor %}
+
+
+                {% if enable %}
+                    <button type="submit" class="btn btn-success"><i class="glyphicon glyphicon-floppy-disk"></i> Save</button>
+                    <button type="button" class="btn btn-primary" onclick="history.go(-1)">Cancel</button>
+                {% endif %}
+
+            </form>
+            <br>
+        </div>
+        <div class="col-md-1 col-xs-1 col-sm-1"></div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'referral_container.html' %}
+{% block view %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'table.css' %}">
+<h3 style="text-align:center;">View Person</h3>
+
+<table class="data-table">
+    <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+    </tr>
+        <tr>
+            <td>{{person.id}}</td>
+            <td>{{person.first_name }}</td>
+            <td>{{person.last_name}}</td>
+        </tr>
+</table>
+
+<h3 style="text-align:center;">Notes</h3>
+
+
+<textarea  style="width: 80%; margin-left: auto; margin-right: auto;" readonly rows="5" class="form-control">{{person.notes}}</textarea>
+
+<h3 style="text-align:center;">Referrals</h3>
+{% include "referral_table.html" %}
+
+{% endblock %}

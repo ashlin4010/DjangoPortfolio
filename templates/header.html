@@ -1,10 +1,12 @@
 {% load static %}
 
-<link rel="stylesheet" type="text/css" href="{% static 'header.css' %}">
 <div class="main-header">
-    <h2>Some web site</h2>
+    <a href="{% url 'home' %}">
+        <img height="60px" src="{% static 'logo.svg' %}">
+    </a>
+
+    <h2>Health Management Case System</h2>
     {% if user.is_authenticated %}
-<!--        Hi {{ user.username }}!-->
         <div>
             <a class="btn btn-primary" href="{% url 'manage' %}">Manage</a>
             <a class="btn btn-primary" href="{% url 'logout' %}">Log Out</a>

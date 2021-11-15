@@ -1,0 +1,11 @@
+{% extends 'referral_container.html' %}
+{% block view %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'table.css' %}">
+<div>
+<h3 style="text-align:center;">Referrals</h3>
+
+{% include "referral_table.html" %}
+
+</div>
+{% endblock %}

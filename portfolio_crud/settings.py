@@ -30,7 +30,6 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'widget_tweaks',
-    'crudapp',
     'referral'
 ]
 
@@ -60,7 +58,6 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             str(BASE_DIR.joinpath('templates')),
-            os.path.join(BASE_DIR, 'crudapp/templates'),
             os.path.join(BASE_DIR, 'referral/templates'),
         ],
         'APP_DIRS': True,
