@@ -18,14 +18,14 @@ sudo docker-compose up -d
 ```
 
 ### Add a Database:
-##### Note: Container must be running first
+##### Note: Container must be running first, allow 30 seconds or so
 
 ```
 # Clean start
-./cleanSetup.sh
+sudo ./cleanSetup.sh
 
 #or
 
 # Demo data + additional superuser
-./restoreBackup.sh
+sudo ./restoreBackup.sh
 ```
