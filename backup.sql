@@ -116,7 +116,7 @@ CREATE TABLE `auth_user` (
   `date_joined` datetime(6) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -125,7 +125,7 @@ CREATE TABLE `auth_user` (
 
 LOCK TABLES `auth_user` WRITE;
 /*!40000 ALTER TABLE `auth_user` DISABLE KEYS */;
-INSERT INTO `auth_user` VALUES (1,'pbkdf2_sha256$260000$0AiSJygosUDaqs1ceoFsGF$SowQqxlIdDQ4NVLJOB3eJaSUBvfkQdUgitQn/5Bk4Yg=','2021-11-15 05:08:47.193460',1,'admin','','','admin@pyhlie.com',1,1,'2021-11-15 04:32:01.176130');
+INSERT INTO `auth_user` VALUES (1,'pbkdf2_sha256$260000$0AiSJygosUDaqs1ceoFsGF$SowQqxlIdDQ4NVLJOB3eJaSUBvfkQdUgitQn/5Bk4Yg=','2021-11-19 01:32:53.838269',1,'admin','','','admin@pyhlie.com',1,1,'2021-11-15 04:32:01.176130'),(2,'pbkdf2_sha256$260000$Qtpe6kK4UriceX25bVDqoF$1C2mFFsnulFPRCnr2EB/s8o6E8B87wifuAST+ECAS4E=',NULL,0,'christopher','','','',0,1,'2021-11-19 01:57:51.878333');
 /*!40000 ALTER TABLE `auth_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -206,7 +206,7 @@ CREATE TABLE `django_admin_log` (
   KEY `django_admin_log_user_id_c564eba6_fk_auth_user_id` (`user_id`),
   CONSTRAINT `django_admin_log_content_type_id_c4bce8eb_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`),
   CONSTRAINT `django_admin_log_user_id_c564eba6_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -215,6 +215,7 @@ CREATE TABLE `django_admin_log` (
 
 LOCK TABLES `django_admin_log` WRITE;
 /*!40000 ALTER TABLE `django_admin_log` DISABLE KEYS */;
+INSERT INTO `django_admin_log` VALUES (1,'2021-11-19 01:57:52.083866','2','christopher',1,'[{\"added\": {}}]',4,1);
 /*!40000 ALTER TABLE `django_admin_log` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -292,7 +293,7 @@ CREATE TABLE `django_session` (
 
 LOCK TABLES `django_session` WRITE;
 /*!40000 ALTER TABLE `django_session` DISABLE KEYS */;
-INSERT INTO `django_session` VALUES ('m84fbxeil1i4j7yjn37e7z1dp8ehpqeq','.eJxVjMEOwiAQRP-FsyEsKSAevfsNZGEXqRpISntq_Hcl6UGPM-_N7CLgtpawdV7CTOIiQJx-u4jpyXUAemC9N5laXZc5yqHIg3Z5a8Sv6-H-HRTs5bueNCVMkA14Zyy6kZ2FSBOzsWdWmr33BEmBtaC8NphMBmaISJmceH8A4tk4MA:1mmUEZ:w2n_2oqjWwvXDHFnhTkPFEsZL29hZ64nK436x6nAf80','2021-11-29 05:08:47.198004');
+INSERT INTO `django_session` VALUES ('m84fbxeil1i4j7yjn37e7z1dp8ehpqeq','.eJxVjMEOwiAQRP-FsyEsKSAevfsNZGEXqRpISntq_Hcl6UGPM-_N7CLgtpawdV7CTOIiQJx-u4jpyXUAemC9N5laXZc5yqHIg3Z5a8Sv6-H-HRTs5bueNCVMkA14Zyy6kZ2FSBOzsWdWmr33BEmBtaC8NphMBmaISJmceH8A4tk4MA:1mmUEZ:w2n_2oqjWwvXDHFnhTkPFEsZL29hZ64nK436x6nAf80','2021-11-29 05:08:47.198004'),('tu2iw32ddi4u6lvn3uflwycvplycwrnp','.eJxVjMEOwiAQRP-FsyEsKSAevfsNZGEXqRpISntq_Hcl6UGPM-_N7CLgtpawdV7CTOIiQJx-u4jpyXUAemC9N5laXZc5yqHIg3Z5a8Sv6-H-HRTs5bueNCVMkA14Zyy6kZ2FSBOzsWdWmr33BEmBtaC8NphMBmaISJmceH8A4tk4MA:1mnslp:ahv_pvkaU0z_RMFkf7aHhZ63-Sz2TaKlLKiCP16hz2M','2021-12-03 01:32:53.843609');
 /*!40000 ALTER TABLE `django_session` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -393,4 +394,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-11-15  5:18:44
+-- Dump completed on 2021-11-19  2:01:38

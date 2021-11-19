@@ -6,6 +6,3 @@ WORKDIR /code
 COPY requirements.txt /code/
 RUN pip install -r requirements.txt
 COPY . /code/
-
-USER root
-RUN chmod +x ./wait-for-it.sh
